@@ -4,6 +4,7 @@ author: "Rayan Grira"
 format: html
 editor: visual
 ---
+
 ```{r}
 #| label: setup
 #| message: false
@@ -15,13 +16,13 @@ library(broom)
 library(performance)
 library(gt)
 ```
+
 ## Introduction
 
-This report investigates factors associated with employee ratings of their
-workplace. I will estimate and compare competing linear regression models,
-evaluate model diagnostics, and interpret the results of a preferred model.
+This report investigates factors associated with employee ratings of their workplace. I will estimate and compare competing linear regression models, evaluate model diagnostics, and interpret the results of a preferred model.
 
 ## Data
+
 ```{r}
 #| label: load-data
 
@@ -30,13 +31,151 @@ data("attitude", package = "datasets")
 analysis_data <- attitude |>
   dplyr::select(rating, complaints, learning, raises)
 ```
-The analysis uses the built-in R dataset `attitude`. The analysis dataset
-has 30 departments and four variables: overall workplace rating
-(`rating`), handling of employee complaints (`complaints`), opportunity
-to learn (`learning`), and raises based on performance (`raises`).
-The scores represent department-level percentages of favourable employee
-responses. So, each observation represents a department instead of an individual employee.
+
+The analysis uses the built-in R dataset `attitude`. The analysis dataset has 30 departments and four variables: overall workplace rating (`rating`), handling of employee complaints (`complaints`), opportunity to learn (`learning`), and raises based on performance (`raises`). The scores represent department-level percentages of favourable employee responses. So, each observation represents a department instead of an individual employee.
+
+## Exploratory Data Analysis
+
+### Descriptive statistics
+### Descriptive statistics
+
+```{r}
+#| label: descriptive-statistics
+
+descriptive_stats <- analysis_data |>
+  pivot_longer(
+    cols = everything(),
+    names_to = "Variable",
+    values_to = "Score"
+  ) |>
+  group_by(Variable) |>
+  summarise(
+    Mean = mean(Score),
+    SD = sd(Score),
+    Minimum = min(Score),
+    Maximum = max(Score),
+    .groups = "drop"
+  )
+
+descriptive_stats |>
+  gt() |>
+  tab_header(
+    title = "Descriptive Statistics",
+    subtitle = "Department-level workplace attitude scores (n = 30)"
+  ) |>
+  cols_label(
+    SD = "Standard deviation"
+  ) |>
+  fmt_number(
+    columns = c(Mean, SD, Minimum, Maximum),
+    decimals = 2
+  )
+```
+
+### Distribution of workplace ratings
+
+```{r}
+#| label: rating-distribution
+#| fig-cap: "Distribution of overall workplace ratings across 30 departments."
+
+ggplot(analysis_data, aes(x = rating)) +
+  geom_histogram(
+    aes(y = after_stat(density)),
+    bins = 8,
+    fill = "lightblue",
+    color = "white"
+  ) +
+  geom_density(
+    color = "navy",
+    linewidth = 1
+  ) +
+  labs(
+    title = "Distribution of Overall Workplace Ratings",
+    x = "Overall workplace rating",
+    y = "Density"
+  ) +
+  theme_minimal()
+```
+### Relationships between ratings and predictors
+
+```{r}
+#| label: rating-complaints
+#| fig-cap: "Overall workplace rating and handling of employee complaints."
+
+ggplot(analysis_data, aes(x = complaints, y = rating)) +
+  geom_point(size = 2, alpha = 0.8) +
+  geom_smooth(
+    method = "lm",
+    formula = y ~ x,
+    se = FALSE,
+    color = "steelblue"
+  ) +
+  labs(
+    title = "Workplace Rating and Complaint Handling",
+    x = "Handling of employee complaints",
+    y = "Overall workplace rating"
+  ) +
+  theme_minimal()
+```
+
+```{r}
+#| label: rating-learning
+#| fig-cap: "Overall workplace rating and opportunity to learn."
+
+ggplot(analysis_data, aes(x = learning, y = rating)) +
+  geom_point(size = 2, alpha = 0.8) +
+  geom_smooth(
+    method = "lm",
+    formula = y ~ x,
+    se = FALSE,
+    color = "steelblue"
+  ) +
+  labs(
+    title = "Workplace Rating and Learning Opportunities",
+    x = "Opportunity to learn",
+    y = "Overall workplace rating"
+  ) +
+  theme_minimal()
+```
+
+```{r}
+#| label: rating-raises
+#| fig-cap: "Overall workplace rating and raises based on performance."
+
+ggplot(analysis_data, aes(x = raises, y = rating)) +
+  geom_point(size = 2, alpha = 0.8) +
+  geom_smooth(
+    method = "lm",
+    formula = y ~ x,
+    se = FALSE,
+    color = "steelblue"
+  ) +
+  labs(
+    title = "Workplace Rating and Performance-Based Raises",
+    x = "Raises based on performance",
+    y = "Overall workplace rating"
+  ) +
+  theme_minimal()
+```
+
+### Summary of exploratory findings
+Overall workplace ratings averaged 64.63 (SD = 12.17), ranging from
+40 to 85 across the 30 departments. The histogram shows a main
+concentration of ratings around the mid-60s, with a tail extending
+toward lower ratings. All three predictors show positive associations
+with overall workplace rating. Complaint handling has the clearest
+approximately linear relationship, whereas learning opportunities and
+performance-based raises show more scatter around their fitted lines.
+There is no obvious strong curvature in these plots. Thus, linear
+relationships is a reasonable starting point. Some departments lie
+far away from the fitted lines, such as one with a learning
+score near 58 and an overall rating of 40. During regression diagnostics, we would need to pay closer attention to these observations. The positive
+associations are consistent with the expectation that more favorable
+views of complaint handling, learning opportunities, and performance-based
+raises accompany higher overall workplace ratings. Importantly, these department-level
+associations do not establish causation.
 ## Model Specification
+
 
 ## Model Comparison
 
