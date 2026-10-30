@@ -4,20 +4,55 @@
     "href": "index.html",
     "title": "Lab 3: Linear Regression — Model Specification, Comparison, and Interpretation",
     "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+    "text": "library(dplyr)\nlibrary(tidyr)\nlibrary(ggplot2)\nlibrary(broom)\nlibrary(performance)\nlibrary(gt)"
   },
   {
-    "objectID": "index.html#quarto",
-    "href": "index.html#quarto",
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
     "title": "Lab 3: Linear Regression — Model Specification, Comparison, and Interpretation",
-    "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+    "section": "Introduction",
+    "text": "Introduction\nThis report investigates factors associated with employee ratings of their workplace. I will estimate and compare competing linear regression models, evaluate model diagnostics, and interpret the results of a preferred model."
   },
   {
-    "objectID": "index.html#running-code",
-    "href": "index.html#running-code",
+    "objectID": "index.html#data",
+    "href": "index.html#data",
     "title": "Lab 3: Linear Regression — Model Specification, Comparison, and Interpretation",
-    "section": "Running Code",
-    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+    "section": "Data",
+    "text": "Data"
+  },
+  {
+    "objectID": "index.html#model-specification",
+    "href": "index.html#model-specification",
+    "title": "Lab 3: Linear Regression — Model Specification, Comparison, and Interpretation",
+    "section": "Model Specification",
+    "text": "Model Specification"
+  },
+  {
+    "objectID": "index.html#model-comparison",
+    "href": "index.html#model-comparison",
+    "title": "Lab 3: Linear Regression — Model Specification, Comparison, and Interpretation",
+    "section": "Model Comparison",
+    "text": "Model Comparison"
+  },
+  {
+    "objectID": "index.html#regression-diagnostics",
+    "href": "index.html#regression-diagnostics",
+    "title": "Lab 3: Linear Regression — Model Specification, Comparison, and Interpretation",
+    "section": "Regression Diagnostics",
+    "text": "Regression Diagnostics"
+  },
+  {
+    "objectID": "index.html#preferred-model-and-interpretation",
+    "href": "index.html#preferred-model-and-interpretation",
+    "title": "Lab 3: Linear Regression — Model Specification, Comparison, and Interpretation",
+    "section": "Preferred Model and Interpretation",
+    "text": "Preferred Model and Interpretation"
+  },
+  {
+    "objectID": "index.html#conclusion",
+    "href": "index.html#conclusion",
+    "title": "Lab 3: Linear Regression — Model Specification, Comparison, and Interpretation",
+    "section": "Conclusion",
+    "text": "Conclusion"
   }
 ]
