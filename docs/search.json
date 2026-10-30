@@ -18,14 +18,7 @@
     "href": "index.html#data",
     "title": "Lab 3: Linear Regression — Model Specification, Comparison, and Interpretation",
     "section": "Data",
-    "text": "Data"
-  },
-  {
-    "objectID": "index.html#model-specification",
-    "href": "index.html#model-specification",
-    "title": "Lab 3: Linear Regression — Model Specification, Comparison, and Interpretation",
-    "section": "Model Specification",
-    "text": "Model Specification"
+    "text": "Data\n\ndata(\"attitude\", package = \"datasets\")\n\nanalysis_data &lt;- attitude |&gt;\n  dplyr::select(rating, complaints, learning, raises)\n\nThe analysis uses the built-in R dataset attitude. The analysis dataset has 30 departments and four variables: overall workplace rating (rating), handling of employee complaints (complaints), opportunity to learn (learning), and raises based on performance (raises). The scores represent department-level percentages of favourable employee responses. So, each observation represents a department instead of an individual employee. ## Model Specification"
   },
   {
     "objectID": "index.html#model-comparison",

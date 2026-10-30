@@ -126,7 +126,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
-  <li><a href="#model-specification" id="toc-model-specification" class="nav-link" data-scroll-target="#model-specification">Model Specification</a></li>
   <li><a href="#model-comparison" id="toc-model-comparison" class="nav-link" data-scroll-target="#model-comparison">Model Comparison</a></li>
   <li><a href="#regression-diagnostics" id="toc-regression-diagnostics" class="nav-link" data-scroll-target="#regression-diagnostics">Regression Diagnostics</a></li>
   <li><a href="#preferred-model-and-interpretation" id="toc-preferred-model-and-interpretation" class="nav-link" data-scroll-target="#preferred-model-and-interpretation">Preferred Model and Interpretation</a></li>
@@ -176,9 +175,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
-</section>
-<section id="model-specification" class="level2">
-<h2 class="anchored" data-anchor-id="model-specification">Model Specification</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"attitude"</span>, <span class="at">package =</span> <span class="st">"datasets"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>analysis_data <span class="ot">&lt;-</span> attitude <span class="sc">|&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(rating, complaints, learning, raises)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>The analysis uses the built-in R dataset <code>attitude</code>. The analysis dataset has 30 departments and four variables: overall workplace rating (<code>rating</code>), handling of employee complaints (<code>complaints</code>), opportunity to learn (<code>learning</code>), and raises based on performance (<code>raises</code>). The scores represent department-level percentages of favourable employee responses. So, each observation represents a department instead of an individual employee. ## Model Specification</p>
 </section>
 <section id="model-comparison" class="level2">
 <h2 class="anchored" data-anchor-id="model-comparison">Model Comparison</h2>

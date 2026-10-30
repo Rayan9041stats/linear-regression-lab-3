@@ -22,7 +22,20 @@ workplace. I will estimate and compare competing linear regression models,
 evaluate model diagnostics, and interpret the results of a preferred model.
 
 ## Data
+```{r}
+#| label: load-data
 
+data("attitude", package = "datasets")
+
+analysis_data <- attitude |>
+  dplyr::select(rating, complaints, learning, raises)
+```
+The analysis uses the built-in R dataset `attitude`. The analysis dataset
+has 30 departments and four variables: overall workplace rating
+(`rating`), handling of employee complaints (`complaints`), opportunity
+to learn (`learning`), and raises based on performance (`raises`).
+The scores represent department-level percentages of favourable employee
+responses. So, each observation represents a department instead of an individual employee.
 ## Model Specification
 
 ## Model Comparison
