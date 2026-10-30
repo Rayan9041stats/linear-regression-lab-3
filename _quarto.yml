@@ -1,0 +1,14 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Lab 3: Linear Regression"
+
+format:
+  html:
+    toc: true
+    code-fold: false
+
+execute:
+  echo: true
