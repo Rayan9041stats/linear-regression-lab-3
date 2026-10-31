@@ -134,8 +134,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#relationships-between-ratings-and-predictors" id="toc-relationships-between-ratings-and-predictors" class="nav-link" data-scroll-target="#relationships-between-ratings-and-predictors">Relationships between ratings and predictors</a></li>
   <li><a href="#summary-of-exploratory-findings" id="toc-summary-of-exploratory-findings" class="nav-link" data-scroll-target="#summary-of-exploratory-findings">Summary of exploratory findings</a></li>
   <li><a href="#competing-regression-models" id="toc-competing-regression-models" class="nav-link" data-scroll-target="#competing-regression-models">Competing regression models</a></li>
+  <li><a href="#interpretation-of-the-complaints-coefficient" id="toc-interpretation-of-the-complaints-coefficient" class="nav-link" data-scroll-target="#interpretation-of-the-complaints-coefficient">Interpretation of the complaints coefficient</a></li>
   </ul></li>
-  <li><a href="#model-comparison" id="toc-model-comparison" class="nav-link" data-scroll-target="#model-comparison">Model Comparison</a></li>
   <li><a href="#regression-diagnostics" id="toc-regression-diagnostics" class="nav-link" data-scroll-target="#regression-diagnostics">Regression Diagnostics</a></li>
   <li><a href="#preferred-model-and-interpretation" id="toc-preferred-model-and-interpretation" class="nav-link" data-scroll-target="#preferred-model-and-interpretation">Preferred Model and Interpretation</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
@@ -229,23 +229,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">2</span></span>
 <span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="vnizmyqcdn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#vnizmyqcdn table {
+<div id="hwvsdpkcnc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hwvsdpkcnc table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#vnizmyqcdn thead, #vnizmyqcdn tbody, #vnizmyqcdn tfoot, #vnizmyqcdn tr, #vnizmyqcdn td, #vnizmyqcdn th {
+#hwvsdpkcnc thead, #hwvsdpkcnc tbody, #hwvsdpkcnc tfoot, #hwvsdpkcnc tr, #hwvsdpkcnc td, #hwvsdpkcnc th {
   border-style: none;
 }
 
-#vnizmyqcdn p {
+#hwvsdpkcnc p {
   margin: 0;
   padding: 0;
 }
 
-#vnizmyqcdn .gt_table {
+#hwvsdpkcnc .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -271,12 +271,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#vnizmyqcdn .gt_caption {
+#hwvsdpkcnc .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#vnizmyqcdn .gt_title {
+#hwvsdpkcnc .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -288,7 +288,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#vnizmyqcdn .gt_subtitle {
+#hwvsdpkcnc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -300,7 +300,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#vnizmyqcdn .gt_heading {
+#hwvsdpkcnc .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -312,13 +312,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#vnizmyqcdn .gt_bottom_border {
+#hwvsdpkcnc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#vnizmyqcdn .gt_col_headings {
+#hwvsdpkcnc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -333,7 +333,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#vnizmyqcdn .gt_col_heading {
+#hwvsdpkcnc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -353,7 +353,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#vnizmyqcdn .gt_column_spanner_outer {
+#hwvsdpkcnc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -365,15 +365,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#vnizmyqcdn .gt_column_spanner_outer:first-child {
+#hwvsdpkcnc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#vnizmyqcdn .gt_column_spanner_outer:last-child {
+#hwvsdpkcnc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#vnizmyqcdn .gt_column_spanner {
+#hwvsdpkcnc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -385,11 +385,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#vnizmyqcdn .gt_spanner_row {
+#hwvsdpkcnc .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#vnizmyqcdn .gt_group_heading {
+#hwvsdpkcnc .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -415,7 +415,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#vnizmyqcdn .gt_empty_group_heading {
+#hwvsdpkcnc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -430,15 +430,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#vnizmyqcdn .gt_from_md > :first-child {
+#hwvsdpkcnc .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#vnizmyqcdn .gt_from_md > :last-child {
+#hwvsdpkcnc .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#vnizmyqcdn .gt_row {
+#hwvsdpkcnc .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -457,7 +457,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#vnizmyqcdn .gt_stub {
+#hwvsdpkcnc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -470,7 +470,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#vnizmyqcdn .gt_stub_row_group {
+#hwvsdpkcnc .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -484,15 +484,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#vnizmyqcdn .gt_row_group_first td {
+#hwvsdpkcnc .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#vnizmyqcdn .gt_row_group_first th {
+#hwvsdpkcnc .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#vnizmyqcdn .gt_summary_row {
+#hwvsdpkcnc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -502,16 +502,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#vnizmyqcdn .gt_first_summary_row {
+#hwvsdpkcnc .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#vnizmyqcdn .gt_first_summary_row.thick {
+#hwvsdpkcnc .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#vnizmyqcdn .gt_last_summary_row {
+#hwvsdpkcnc .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -521,7 +521,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#vnizmyqcdn .gt_grand_summary_row {
+#hwvsdpkcnc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -531,7 +531,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#vnizmyqcdn .gt_first_grand_summary_row {
+#hwvsdpkcnc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -541,7 +541,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#vnizmyqcdn .gt_last_grand_summary_row_top {
+#hwvsdpkcnc .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -551,11 +551,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#vnizmyqcdn .gt_striped {
+#hwvsdpkcnc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#vnizmyqcdn .gt_table_body {
+#hwvsdpkcnc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -564,7 +564,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#vnizmyqcdn .gt_footnotes {
+#hwvsdpkcnc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -578,7 +578,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#vnizmyqcdn .gt_footnote {
+#hwvsdpkcnc .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -587,7 +587,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#vnizmyqcdn .gt_sourcenotes {
+#hwvsdpkcnc .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -601,7 +601,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#vnizmyqcdn .gt_sourcenote {
+#hwvsdpkcnc .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -609,72 +609,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#vnizmyqcdn .gt_left {
+#hwvsdpkcnc .gt_left {
   text-align: left;
 }
 
-#vnizmyqcdn .gt_center {
+#hwvsdpkcnc .gt_center {
   text-align: center;
 }
 
-#vnizmyqcdn .gt_right {
+#hwvsdpkcnc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#vnizmyqcdn .gt_font_normal {
+#hwvsdpkcnc .gt_font_normal {
   font-weight: normal;
 }
 
-#vnizmyqcdn .gt_font_bold {
+#hwvsdpkcnc .gt_font_bold {
   font-weight: bold;
 }
 
-#vnizmyqcdn .gt_font_italic {
+#hwvsdpkcnc .gt_font_italic {
   font-style: italic;
 }
 
-#vnizmyqcdn .gt_super {
+#hwvsdpkcnc .gt_super {
   font-size: 65%;
 }
 
-#vnizmyqcdn .gt_footnote_marks {
+#hwvsdpkcnc .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#vnizmyqcdn .gt_asterisk {
+#hwvsdpkcnc .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#vnizmyqcdn .gt_indent_1 {
+#hwvsdpkcnc .gt_indent_1 {
   text-indent: 5px;
 }
 
-#vnizmyqcdn .gt_indent_2 {
+#hwvsdpkcnc .gt_indent_2 {
   text-indent: 10px;
 }
 
-#vnizmyqcdn .gt_indent_3 {
+#hwvsdpkcnc .gt_indent_3 {
   text-indent: 15px;
 }
 
-#vnizmyqcdn .gt_indent_4 {
+#hwvsdpkcnc .gt_indent_4 {
   text-indent: 20px;
 }
 
-#vnizmyqcdn .gt_indent_5 {
+#hwvsdpkcnc .gt_indent_5 {
   text-indent: 25px;
 }
 
-#vnizmyqcdn .katex-display {
+#hwvsdpkcnc .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#vnizmyqcdn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#hwvsdpkcnc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -870,9 +870,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
+<section id="interpretation-of-the-complaints-coefficient" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation-of-the-complaints-coefficient">Interpretation of the complaints coefficient</h3>
+<p>In M1, the complaints coefficient represents the expected difference in overall workplace rating associated with a one-point increase in the complaint-handling score, without adjusting for learning opportunities or raises. In M2, it represents the same association while holding learning opportunities constant. In M3, it represents the association while holding both learning opportunities and performance-based raises constant. So, the interpretation changes from an unadjusted association in M1 to an association adjusted for the other included predictors in M2 and M3. Changes in the estimated coefficient across models reflect how the complaints–rating association differs after accounting for these additional workplace characteristics. It is important to note that they do not establish a causal effect. ## Model Comparison</p>
 </section>
-<section id="model-comparison" class="level2">
-<h2 class="anchored" data-anchor-id="model-comparison">Model Comparison</h2>
 </section>
 <section id="regression-diagnostics" class="level2">
 <h2 class="anchored" data-anchor-id="regression-diagnostics">Regression Diagnostics</h2>
