@@ -238,7 +238,47 @@ M2 and M3. Changes in the estimated coefficient across models reflect
 how the complaints–rating association differs after accounting for
 these additional workplace characteristics. The fact that the complaints coefficient gets reduced after adding learning suggests that the estimated complaints-rating association is partly shared with learning opportunities, while adding raises changes the coefficient little by comparison. It is important to note that while complaint handling stays positively correlated with overall workplace rating in all three models, these associations do not establish a causal effect.
 ## Model Comparison
+### Nested-model F-tests
 
+```{r}
+#| label: nested-model-tests
+
+# Compare all four models in the required order
+anova_results <- anova(model_0, model_1, model_2, model_3)
+
+# Retain and rename the required statistics
+nested_tests <- anova_results |>
+  as.data.frame() |>
+  dplyr::select(Res.Df, Df, F, `Pr(>F)`) |>
+  dplyr::rename(
+    residual_df = Res.Df,
+    change_df = Df,
+    f_statistic = F,
+    p_value = `Pr(>F)`
+  ) |>
+  dplyr::mutate(
+    Model = c("M0", "M1", "M2", "M3"),
+    Comparison = c(
+      "Baseline",
+      "M1 vs M0: Add complaints",
+      "M2 vs M1: Add learning",
+      "M3 vs M2: Add raises"
+    ),
+    .before = 1
+  )
+
+nested_tests
+```
+The nested-model F-tests show that adding complaint handling
+significantly improves model fit compared to the intercept-only model
+(F = 60.73, p < .001). Adding learning opportunities does not provide
+a statistically significant improvement beyond complaint handling
+(F = 2.38, p = .135).Moreover, adding performance-based raises does
+not significantly improve fit beyond complaints and learning
+(F = 0.025, p = .876). These tests support complaint handling as an
+important predictor but provide insufficient evidence that learning
+or raises contributes additional explanatory value in this sequence
+of models.After considering the remaining performance measures and regression diagnostics, I will select a preferred model.
 ## Regression Diagnostics
 
 ## Preferred Model and Interpretation
