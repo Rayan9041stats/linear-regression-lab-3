@@ -229,15 +229,14 @@ model_3 <- lm(
 In M1, the complaints coefficient represents the expected difference in
 overall workplace rating associated with a one-point increase in the
 complaint-handling score, without adjusting for learning opportunities
-or raises. In M2, it represents the same association while holding
-learning opportunities constant. In M3, it represents the association
+or raises. In this case it's a 0.755 increase in predicted overall workplace rating score per one unit increase in the complaint-handling score. In M2, it represents the same association while holding
+learning opportunities constant. For this case, an estimated increase of 0.644 is expected when learning opportunities is held constant, being a lower increase compared to the slope in the M1 model. In M3, it represents the association
 while holding both learning opportunities and performance-based raises
-constant. So, the interpretation changes from an unadjusted association
+constant. In this model, the estimate remains close to previous models at 0.653 when both learning opportunities and performance-based raises are held constant. So, the interpretation changes from an unadjusted association
 in M1 to an association adjusted for the other included predictors in
 M2 and M3. Changes in the estimated coefficient across models reflect
 how the complaints–rating association differs after accounting for
-these additional workplace characteristics. It is important to note that they do not establish a
-causal effect.
+these additional workplace characteristics. The fact that the complaints coefficient gets reduced after adding learning suggests that the estimated complaints-rating association is partly shared with learning opportunities, while adding raises changes the coefficient little by comparison. It is important to note that while complaint handling stays positively correlated with overall workplace rating in all three models, these associations do not establish a causal effect.
 ## Model Comparison
 
 ## Regression Diagnostics
