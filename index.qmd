@@ -431,6 +431,27 @@ model_comparison |>
     )
   )
 ```
+### Interpretation of model comparisons
+
+M3 explains the largest proportion of variation in overall workplace
+rating (R² = 0.7083), but its improvement over M2 (R² = 0.7080) is
+very little and perhaps negligible. Adjusted R² increases from 0 in M0 to 0.6699 in M1 and
+0.6864 in M2, then decreases to 0.6746 in M3, suggesting that adding
+raises does not provide enough additional explanatory value to
+justify the added complexity of adding that variable. Adding complaint handling explains
+approximately 68.13 percentage points of additional variation,
+whereas learning adds about 2.67 percentage points and raises adds
+only about 0.03 percentage points. The nested-model F-tests show
+a statistically significant improvement when complaints is added
+(F = 60.73, p < .001), but not when learning (F = 2.38, p = .135)
+or raises (F = 0.025, p = .876) is added. RMSE decreases by an extreme amount
+from approximately 12.0 rating points in M0 to 6.76 in M1, indicating
+a meaningful improvement in fit compared to the observed spread
+of ratings. The further reduction to 6.47 in M2 is modest, and
+the reduction to 6.46 in M3 is very little relative to 6.47. Without a clear threshold for practical importance, it is difficult to determine whether the small reduction in RMSE from adding learning is meaningful in practice. Nevertheless, this low reduction from 6.47 to 6.46 does not appear substantially meaningful. Overall, complaint handling accounts for most of the explained variation;
+learning provides a small additional contribution, and raises
+provides nearly no contribution after accounting for the other predictors.
+
 ## Regression Diagnostics
 
 ## Preferred Model and Interpretation
