@@ -175,7 +175,21 @@ views of complaint handling, learning opportunities, and performance-based
 raises accompany higher overall workplace ratings. Importantly, these department-level
 associations do not establish causation.
 ## Model Specification
+### Predictions
 
+I expect that more favorable views of complaint handling will be associated
+with higher overall workplace ratings because responsive and fair
+handling of concerns may contribute to employees feeling heard and
+supported. In addition, also predict that learning opportunities will explain additional
+variation in workplace ratings beyond complaint handling, since
+professional development represents a distinct aspect of the workplace
+experience. Finally, I expect more favorable views of performance-based
+raises to explain further variation after accounting for complaint
+handling and learning opportunities, because recognition and perceived
+fairness in compensation could contribute to overall workplace
+evaluations. These expectations align with a sequence of models that
+begins with complaint handling, adds learning opportunities, and then
+adds performance-based raises. We will evaluate whether adding more predictors, such as pay, increases the fit of the model empirically.
 
 ## Model Comparison
 
