@@ -312,6 +312,19 @@ model_performance <- model_performance |>
 
 model_performance
 ```
+### Changes in explained variance
+
+```{r}
+#| label: changes-in-r-squared
+
+model_performance <- model_performance |>
+  arrange(Model) |>
+  mutate(
+    delta_r_squared = r_squared - dplyr::lag(r_squared)
+  )
+
+model_performance
+```
 ## Regression Diagnostics
 
 ## Preferred Model and Interpretation
