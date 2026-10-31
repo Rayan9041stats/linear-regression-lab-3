@@ -325,6 +325,112 @@ model_performance <- model_performance |>
 
 model_performance
 ```
+### Combined model-comparison table
+
+```{r}
+#| label: combined-model-comparison
+
+# Verify that the two data frames have matching model order
+stopifnot(identical(model_performance$Model, nested_tests$Model))
+
+# Combine performance measures with the nested-test statistics
+model_comparison <- cbind(
+  model_performance,
+  nested_tests |>
+    dplyr::select(
+      residual_df,
+      change_df,
+      f_statistic,
+      p_value
+    )
+)
+
+# Create the formatted comparison table
+model_comparison |>
+  gt(rowname_col = "Model") |>
+  tab_header(
+    title = "Comparison of Nested Regression Models",
+    subtitle = "Outcome: Overall workplace rating; 30 departments"
+  ) |>
+  tab_stubhead(label = "Model") |>
+  tab_spanner(
+    label = "Overall model performance",
+    columns = c(
+      r_squared,
+      adjusted_r_squared,
+      RMSE,
+      residual_df
+    )
+  ) |>
+  tab_spanner(
+    label = "Incremental improvement over preceding model",
+    columns = c(
+      delta_r_squared,
+      change_df,
+      f_statistic,
+      p_value
+    )
+  ) |>
+  cols_label(
+    r_squared = "R²",
+    adjusted_r_squared = "Adjusted R²",
+    RMSE = "RMSE",
+    delta_r_squared = "ΔR²",
+    residual_df = "Residual df",
+    change_df = "Nested df",
+    f_statistic = "Nested F",
+    p_value = "Nested p"
+  ) |>
+  fmt_number(
+    columns = c(r_squared, adjusted_r_squared, delta_r_squared),
+    decimals = 4
+  ) |>
+  fmt_number(
+    columns = RMSE,
+    decimals = 2
+  ) |>
+  fmt_number(
+    columns = f_statistic,
+    decimals = 3
+  ) |>
+  fmt_number(
+    columns = c(residual_df, change_df),
+    decimals = 0
+  ) |>
+  fmt_number(
+    columns = p_value,
+    decimals = 3
+  ) |>
+  sub_small_vals(
+    columns = p_value,
+    threshold = 0.001
+  ) |>
+  sub_missing(
+    columns = everything(),
+    missing_text = "\u2014"
+  ) |>
+  cols_align(
+    align = "center",
+    columns = everything()
+  ) |>
+  tab_source_note(
+    source_note = paste(
+      "M0: Intercept only;",
+      "M1: Complaints;",
+      "M2: Complaints + Learning;",
+      "M3: Complaints + Learning + Raises."
+    )
+  ) |>
+  tab_source_note(
+    source_note = paste(
+      "R² and ΔR² are reported as proportions.",
+      "RMSE is calculated from in-sample residuals in rating points.",
+      "Nested tests compare each model with its predecessor",
+      "using the four-model ANOVA call.",
+      "Dashes indicate that no preceding-model comparison is available."
+    )
+  )
+```
 ## Regression Diagnostics
 
 ## Preferred Model and Interpretation
