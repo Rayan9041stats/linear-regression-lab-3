@@ -191,6 +191,39 @@ evaluations. These expectations align with a sequence of models that
 begins with complaint handling, adds learning opportunities, and then
 adds performance-based raises. We will evaluate whether adding more predictors, such as pay, increases the fit of the model empirically.
 
+### Competing regression models
+
+I estimate four nested models, starting with an intercept-only baseline
+and then adding complaint handling, learning opportunities, and performance-based
+raises in this order.
+
+```{r}
+#| label: fit-models
+
+# M0: Intercept-only baseline
+model_0 <- lm(
+  rating ~ 1,
+  data = analysis_data
+)
+
+# M1: Complaint handling
+model_1 <- lm(
+  rating ~ complaints,
+  data = analysis_data
+)
+
+# M2: Complaint handling and learning opportunities
+model_2 <- lm(
+  rating ~ complaints + learning,
+  data = analysis_data
+)
+
+# M3: Complaint handling, learning opportunities, and raises
+model_3 <- lm(
+  rating ~ complaints + learning + raises,
+  data = analysis_data
+)
+```
 ## Model Comparison
 
 ## Regression Diagnostics
