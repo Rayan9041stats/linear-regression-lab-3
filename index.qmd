@@ -279,6 +279,39 @@ not significantly improve fit beyond complaints and learning
 important predictor but provide insufficient evidence that learning
 or raises contributes additional explanatory value in this sequence
 of models.After considering the remaining performance measures and regression diagnostics, I will select a preferred model.
+
+### Model-level performance statistics
+
+```{r}
+#| label: model-performance
+
+# Extract one row of model-level statistics per model
+model_performance <- bind_rows(
+  M0 = broom::glance(model_0),
+  M1 = broom::glance(model_1),
+  M2 = broom::glance(model_2),
+  M3 = broom::glance(model_3),
+  .id = "Model"
+)
+
+# Calculate RMSE directly from each model's residuals
+model_performance <- model_performance |>
+  mutate(
+    RMSE = c(
+      sqrt(mean(residuals(model_0)^2)),
+      sqrt(mean(residuals(model_1)^2)),
+      sqrt(mean(residuals(model_2)^2)),
+      sqrt(mean(residuals(model_3)^2))
+    )
+  ) |>
+  dplyr::select(Model, r.squared, adj.r.squared, RMSE) |>
+  dplyr::rename(
+    r_squared = r.squared,
+    adjusted_r_squared = adj.r.squared
+  )
+
+model_performance
+```
 ## Regression Diagnostics
 
 ## Preferred Model and Interpretation
