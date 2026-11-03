@@ -612,4 +612,53 @@ coefficient_table |>
     )
   )
 ```
+### Interpretation of the preferred-model coefficients
+
+```{r}
+#| label: extract-coefficients-for-text
+#| include: false
+
+complaints_estimate <- coefficient_results |>
+  filter(term == "complaints") |>
+  pull(estimate)
+
+complaints_lower <- coefficient_results |>
+  filter(term == "complaints") |>
+  pull(conf.low)
+
+complaints_upper <- coefficient_results |>
+  filter(term == "complaints") |>
+  pull(conf.high)
+
+learning_estimate <- coefficient_results |>
+  filter(term == "learning") |>
+  pull(estimate)
+
+learning_lower <- coefficient_results |>
+  filter(term == "learning") |>
+  pull(conf.low)
+
+learning_upper <- coefficient_results |>
+  filter(term == "learning") |>
+  pull(conf.high)
+```
+In M2, complaint handling is positively associated with overall workplace
+rating. When holding learning opportunities constant, a one-percentage-point
+increase in favourable responses about complaint handling is associated
+with an estimated `r sprintf("%.3f", complaints_estimate)`-percentage-point
+increase in overall workplace rating (95% CI:
+`r sprintf("%.3f", complaints_lower)` to
+`r sprintf("%.3f", complaints_upper)`). The entire confidence interval lies above zero, supporting a positive adjusted association.
+Learning opportunities also have a positive estimated association, meaning that when you hold complaint handling constant, a one-percentage-point increase in favourable responses about learning opportunities is associated
+with an estimated `r sprintf("%.3f", learning_estimate)`-percentage-point
+increase in overall workplace rating (95% CI:
+`r sprintf("%.3f", learning_lower)` to
+`r sprintf("%.3f", learning_upper)`). Still, this interval includes
+zero and spans both negative and positive associations, so the data
+do not clearly establish an additional learning association after
+accounting for complaint handling. These estimates describe differences
+between departments rather than individual employees and should not
+be interpreted causally. The confidence intervals use conventional
+standard errors and should be interpreted cautiously given the
+diagnostic concerns about residual variability and normality.
 ## Conclusion
