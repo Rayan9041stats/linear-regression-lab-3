@@ -661,4 +661,38 @@ between departments rather than individual employees and should not
 be interpreted causally. The confidence intervals use conventional
 standard errors and should be interpreted cautiously given the
 diagnostic concerns about residual variability and normality.
+
+### Performance of the preferred model
+
+```{r}
+#| label: preferred-model-performance
+#| include: false
+
+preferred_performance <- model_performance |>
+  filter(Model == "M2")
+
+preferred_r_squared <- preferred_performance |>
+  pull(r_squared)
+
+preferred_adjusted_r_squared <- preferred_performance |>
+  pull(adjusted_r_squared)
+
+preferred_rmse <- preferred_performance |>
+  pull(RMSE)
+```
+The selected model, M2, has an R² of
+`r sprintf("%.4f", preferred_r_squared)`, indicating that complaint
+handling and learning opportunities together explain approximately
+`r sprintf("%.2f", 100 * preferred_r_squared)`% of the observed
+variation in overall workplace ratings across departments. Its adjusted
+R² is `r sprintf("%.4f", preferred_adjusted_r_squared)`, which accounts
+for the number of predictors relative to the sample size and provides
+a more conservative measure of model fit. The RMSE is
+`r sprintf("%.2f", preferred_rmse)` percentage points on the workplace-rating
+scale, representing the root mean squared difference between observed
+and fitted department ratings. So, the model explains a substantial
+share of the observed variation, but meaningful differences between
+observed and fitted ratings remain. These statistics describe fit
+to the 30 departments used to estimate the model. These statistics do not establish how accurately it would predict ratings in new departments.
+
 ## Conclusion
