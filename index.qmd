@@ -531,4 +531,85 @@ normality and possible heteroscedasticity could require caution when
 interpreting conventional standard errors and p-values. The choice
 of M2 is consequently a qualified preference rather than evidence
 that learning makes a clearly established additional contribution.
+
+### Coefficients of the preferred model
+
+```{r}
+#| label: preferred-model-coefficients
+
+# Extract coefficients and 95% confidence intervals from M2
+coefficient_results <- broom::tidy(
+  model_2,
+  conf.int = TRUE,
+  conf.level = 0.95
+)
+
+# Prepare the columns for presentation
+coefficient_table <- coefficient_results |>
+  mutate(
+    Predictor = case_when(
+      term == "(Intercept)" ~ "Intercept",
+      term == "complaints" ~ "Complaint handling",
+      term == "learning" ~ "Learning opportunities",
+      TRUE ~ term
+    ),
+    confidence_interval = sprintf(
+      "[%.3f, %.3f]",
+      conf.low,
+      conf.high
+    )
+  ) |>
+  dplyr::select(
+    Predictor,
+    estimate,
+    std.error,
+    confidence_interval,
+    p.value
+  )
+
+# Format the coefficient table
+coefficient_table |>
+  gt() |>
+  tab_header(
+    title = "Regression Coefficients for the Preferred Model",
+    subtitle = "M2: Complaint handling and learning opportunities"
+  ) |>
+  cols_label(
+    Predictor = "Predictor",
+    estimate = "Unstandardized coefficient",
+    std.error = "Standard error",
+    confidence_interval = "95% confidence interval",
+    p.value = "p-value"
+  ) |>
+  fmt_number(
+    columns = c(estimate, std.error),
+    decimals = 3
+  ) |>
+  fmt_number(
+    columns = p.value,
+    decimals = 3
+  ) |>
+  sub_small_vals(
+    columns = p.value,
+    threshold = 0.001
+  ) |>
+  cols_align(
+    align = "center",
+    columns = c(
+      estimate,
+      std.error,
+      confidence_interval,
+      p.value
+    )
+  ) |>
+  tab_source_note(
+    source_note = paste(
+      "Outcome: Overall workplace rating.",
+      "N = 30 departments.",
+      "Coefficients are unstandardized.",
+      "Confidence intervals and p-values use conventional",
+      "ordinary least squares standard errors."
+    )
+  )
+```
 ## Conclusion
