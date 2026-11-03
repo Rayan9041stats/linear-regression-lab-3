@@ -696,3 +696,35 @@ observed and fitted ratings remain. These statistics describe fit
 to the 30 departments used to estimate the model. These statistics do not establish how accurately it would predict ratings in new departments.
 
 ## Conclusion
+### Discussion and Limitations
+Complaint handling emerged as the strongest and most consistent predictor
+of overall workplace ratings in this analysis. It accounted for most
+of the explained variation and stayed positively associated with
+ratings after accounting for learning opportunities and performance-based
+raises. Learning opportunities showed a positive estimated association
+and modestly improved model performance, but the confidence interval
+included zero and the nested-model test did not establish a statistically
+significant improvement beyond complaint handling. Performance-based
+raises contributed almost no additional explained variation after
+accounting for complaints and learning. These findings suggest that
+complaint handling provides the clearest information about differences
+in workplace ratings across these departments, while the evidence for
+an additional contribution from learning is uncertain and that for
+raises is limited.
+
+Several limitations qualify these conclusions. The analysis includes
+only 30 departments, limiting the precision of estimates and the ability
+to detect smaller associations. The observations are department-level
+summaries, so the findings cannot be assumed to describe relationships
+among individual employees. These observational associations also do
+not establish that changing complaint handling, learning opportunities,
+or raises would cause changes in workplace ratings. Other unmeasured
+workplace characteristics could help explain the observed relationships.
+In addition, diagnostic concerns about residual normality and potentially
+unequal residual variance call for caution when interpreting conventional
+confidence intervals and p-values. Model performance was assessed using
+the same departments used for estimation, rather than an independent
+validation sample. Finally, the limited additional contribution of
+raises does not imply that compensation is unimportant. Instead, it indicates
+that this particular measure added little explanatory information
+beyond complaints and learning in this dataset.
