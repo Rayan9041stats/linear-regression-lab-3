@@ -453,7 +453,58 @@ learning provides a small additional contribution, and raises
 provides nearly no contribution after accounting for the other predictors.
 
 ## Regression Diagnostics
+### Candidate model for diagnostic assessment
 
+I examined M2, which includes complaint handling and learning opportunities,
+as a the most promising model. It has the highest adjusted R² and a modestly
+lower RMSE than M1, while adding raises in M3 provides negligible
+improvement. However, the additional contribution of learning was not
+statistically significant in the nested-model comparison, so M1 remains
+a plausible, more parsimonious alternative. The final choice considering which model is the most promising will also consider the diagnostic results.
+### Standard regression diagnostics
+
+```{r}
+#| label: regression-diagnostic-plots
+#| fig-width: 10
+#| fig-height: 8
+#| fig-cap: "Standard regression diagnostic plots for M2."
+
+# Save the current graphics settings
+old_par <- par(no.readonly = TRUE)
+
+# Display four diagnostic plots in a two-by-two layout
+par(mfrow = c(2, 2))
+
+plot(
+  model_2,
+  which = c(1, 2, 3, 5),
+  ask = FALSE
+)
+
+# Restore the original graphics settings
+par(old_par)
+```
+### Multicollinearity
+
+```{r}
+#| label: multicollinearity-check
+
+collinearity_results <- performance::check_collinearity(model_2)
+
+collinearity_results
+```
+### Interpretation of regression diagnostics
+
+The diagnostic plots above suggest that a linear specification is reasonable
+for M2, since the residuals-versus-fitted plot shows no pronounced curvature.
+Multicollinearity is also limited, since we have VIF values of 1.55 for both
+predictors. Nevertheless, changes in residual spread, as well as departures from the Q-Q reference line, imply imperfect normality and possibly heteroscedasticity. Observation 24 has relatively high leverage, therefore it could be useful to examine it closer, although no observation appears beyond
+the displayed Cook's-distance contour of 0.5. These findings do not
+invalidate the model, but they reduce confidence in the precision of
+its standard errors and p-values, particularly with only
+30 departments. The estimated associations should therefore be
+interpreted cautiously rather than treated as definitive evidence
+about each predictor's unique contribution.
 ## Preferred Model and Interpretation
 
 ## Conclusion

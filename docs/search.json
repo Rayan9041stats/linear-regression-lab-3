@@ -32,14 +32,7 @@
     "href": "index.html#regression-diagnostics",
     "title": "Lab 3: Linear Regression — Model Specification, Comparison, and Interpretation",
     "section": "Regression Diagnostics",
-    "text": "Regression Diagnostics"
-  },
-  {
-    "objectID": "index.html#preferred-model-and-interpretation",
-    "href": "index.html#preferred-model-and-interpretation",
-    "title": "Lab 3: Linear Regression — Model Specification, Comparison, and Interpretation",
-    "section": "Preferred Model and Interpretation",
-    "text": "Preferred Model and Interpretation"
+    "text": "Regression Diagnostics\n\nCandidate model for diagnostic assessment\nI examined M2, which includes complaint handling and learning opportunities, as a the most promising model. It has the highest adjusted R² and a modestly lower RMSE than M1, while adding raises in M3 provides negligible improvement. However, the additional contribution of learning was not statistically significant in the nested-model comparison, so M1 remains a plausible, more parsimonious alternative. The final choice considering which model is the most promising will also consider the diagnostic results. ### Standard regression diagnostics\n\n# Save the current graphics settings\nold_par &lt;- par(no.readonly = TRUE)\n\n# Display four diagnostic plots in a two-by-two layout\npar(mfrow = c(2, 2))\n\nplot(\n  model_2,\n  which = c(1, 2, 3, 5),\n  ask = FALSE\n)\n\n\n\n\nStandard regression diagnostic plots for M2.\n\n\n\n# Restore the original graphics settings\npar(old_par)\n\n\n\nMulticollinearity\n\ncollinearity_results &lt;- performance::check_collinearity(model_2)\n\ncollinearity_results\n\n# Check for Multicollinearity\n\nLow Correlation\n\n       Term  VIF   VIF 95% CI adj. VIF Tolerance Tolerance 95% CI\n complaints 1.55 [1.18, 2.71]     1.25      0.64     [0.37, 0.85]\n   learning 1.55 [1.18, 2.71]     1.25      0.64     [0.37, 0.85]\n\n\n\n\nInterpretation of regression diagnostics\nThe diagnostic plots above suggest that a linear specification is reasonable for M2, since the residuals-versus-fitted plot shows no pronounced curvature. Multicollinearity is also limited, since we have VIF values of 1.55 for both predictors. Nevertheless, changes in residual spread, as well as departures from the Q-Q reference line, imply imperfect normality and possibly heteroscedasticity. Observation 24 has relatively high leverage, therefore it could be useful to examine it closer, although no observation appears beyond the displayed Cook’s-distance contour of 0.5. These findings do not invalidate the model, but they reduce confidence in the precision of its standard errors and p-values, particularly with only 30 departments. The estimated associations should therefore be interpreted cautiously rather than treated as definitive evidence about each predictor’s unique contribution. ## Preferred Model and Interpretation"
   },
   {
     "objectID": "index.html#conclusion",
