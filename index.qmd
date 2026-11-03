@@ -506,5 +506,29 @@ its standard errors and p-values, particularly with only
 interpreted cautiously rather than treated as definitive evidence
 about each predictor's unique contribution.
 ## Preferred Model and Interpretation
+### Preferred model
 
+I chose M2, which includes complaint handling and learning opportunities,
+as the preferred model, while acknowledging that M1 is a reasonable, more
+parsimonious alternative. Complaint handling provides the largest
+improvement over the null model, explaining approximately 68.13% of
+the variation in ratings and significantly improving fit in the
+nested-model test (p < .001). Adding learning explains a further
+2.67 percentage points of variation, increases adjusted R² from
+0.6699 to 0.6864, and reduces RMSE from 6.76 to 6.47 rating points.
+Although this improvement is modest and not statistically significant
+in the nested-model test (p = .135), learning represents a distinct,
+substantively relevant aspect of workplace experience. Keeping it
+allows the complaint-handling association to be estimated while
+accounting for learning opportunities. In contrast, adding raises
+in M3 explains only about 0.03 additional percentage points of
+variation, produces virtually no reduction in RMSE, lowers adjusted
+R², and does not significantly improve fit (p = .876). M2 therefore
+offers a defensible balance between explanatory value, interpretability,
+and complexity. Its diagnostics show no pronounced curvature or
+concerning multicollinearity, although departures from residual
+normality and possible heteroscedasticity could require caution when
+interpreting conventional standard errors and p-values. The choice
+of M2 is consequently a qualified preference rather than evidence
+that learning makes a clearly established additional contribution.
 ## Conclusion
