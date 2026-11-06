@@ -16,6 +16,13 @@ library(broom)
 library(performance)
 library(gt)
 ```
+## AI Use Disclosure
+
+I used Perplexity AI during this assignment.
+Assistance included generating and amending R code for data preparation,
+visualization, regression estimation, model comparison, diagnostics, and
+formatted tables. I also used it to check my statistical
+interpretations and model-selection justification.
 
 ## Introduction
 
@@ -170,20 +177,20 @@ There is no obvious strong curvature in these plots. Thus, linear
 relationships is a reasonable starting point. Some departments lie
 far away from the fitted lines, such as one with a learning
 score near 58 and an overall rating of 40. During regression diagnostics, we would need to pay closer attention to these observations. The positive
-associations are consistent with the expectation that more favorable
+associations are consistent with the expectation that more favourable
 views of complaint handling, learning opportunities, and performance-based
 raises accompany higher overall workplace ratings. Importantly, these department-level
 associations do not establish causation.
 ## Model Specification
 ### Predictions
 
-I expect that more favorable views of complaint handling will be associated
+I expect that more favourable views of complaint handling will be associated
 with higher overall workplace ratings because responsive and fair
 handling of concerns may contribute to employees feeling heard and
 supported. In addition, also predict that learning opportunities will explain additional
 variation in workplace ratings beyond complaint handling, since
 professional development represents a distinct aspect of the workplace
-experience. Finally, I expect more favorable views of performance-based
+experience. Finally, I expect more favourable views of performance-based
 raises to explain further variation after accounting for complaint
 handling and learning opportunities, because recognition and perceived
 fairness in compensation could contribute to overall workplace
@@ -728,3 +735,143 @@ validation sample. Finally, the limited additional contribution of
 raises does not imply that compensation is unimportant. Instead, it indicates
 that this particular measure added little explanatory information
 beyond complaints and learning in this dataset.
+
+## AI Prompt Appendix
+
+The following prompts were submitted to Perplexity AI during this Lab assignment.
+
+### Prompt 
+where do i check if analysis data has 30 rows and 4 required columns?
+
+
+### Prompt 
+after adding the histogram to the same chunk, the code didnt work so i clicked the left arrow stating go back to previous source location and now this happened.
+
+
+### Prompt 
+I dont see the histogram after rendering.
+
+
+### Prompt 
+is this histogram correct? and what about there being no standard deviations on the table i showed
+
+
+
+### Prompt 
+````{verbatim}
+Is this code right for estimating the four models? ### Competing regression models?
+
+```{r}
+#| label: fit-models
+
+# M0: Intercept-only baseline
+model_0 <- lm(
+  rating ~ 1,
+  data = analysis_data
+)
+
+# M1: Complaint handling
+model_1 <- lm(
+  rating ~ complaints,
+  data = analysis_data
+)
+
+# M2: Complaint handling and learning opportunities
+model_2  lm(
+  rating ~ complaints + learning,
+  data = analysis_data
+)
+
+# M3: Complaint handling, learning opportunities, and raises
+model_3 <- lm(
+  rating ~ complaints + learning + raises,
+  data = analysis_data
+)
+```
+~~~~
+
+### Prompt
+what should the code include for comparing the four model performances using anova?
+
+### Prompt
+anova_results
+Analysis of Variance Table
+
+Model 1: rating ~ 1
+Model 2: rating ~ complaints
+Model 3: rating ~ complaints + learning
+Model 4: rating ~ complaints + learning + raises
+Res.Df    RSS Df Sum of Sq       F    Pr(>F)
+1     29 4297.0
+2     28 1369.4  1   2927.58 60.7256 2.884e-08 ***
+3     27 1254.6  1    114.73  2.3799    0.1350
+4     26 1253.5  1      1.19  0.0246    0.8765
+
+Signif. codes:  0 ‘’ 0.001 ‘’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+nested_tests
+Model               Comparison residual_df change_df f_statistic      p_value
+1    M0                 Baseline          29        NA          NA           NA
+2    M1 M1 vs M0: Add complaints          28         1 60.72560389 2.883919e-08
+3    M2   M2 vs M1: Add learning          27         1  2.37986580 1.349930e-01
+4    M3     M3 vs M2: Add raises          26         1  0.02463664 8.764884e-01
+
+
+### Prompt
+model_performance
+
+A tibble: 4 × 4
+  Model r_squared adjusted_r_squared  RMSE
+<chr>     <dbl>              <dbl> <dbl>
+1 M0        0                  0     12.0
+2 M1        0.681              0.670  6.76
+3 M2        0.708              0.686  6.47
+4 M3        0.708              0.675  6.46
+
+
+### Prompt
+To combine the model-performance statistics with the nested-model test results, what should the code look like?
+
+
+### Prompt
+image.png
+
+
+### Prompt
+Does my paragraph  explin
+1. Which assumptions appear reasonably satisfied.
+2. Whether any potential problems are evident.
+3. Whether those problems affect your confidence in the model.
+
+
+### Prompt
+I want to retain M2, what would you say and why?
+
+
+### Prompt
+How do I fit these nested model f tests: Nested-model F-tests. • ΔR². • Adjusted R². • RMSE. • Model complexity. • Diagnostic findings. • Substantive interpretability
+
+
+### Prompt
+ i wrote this, and tell me if it is fine as it is: In M2, complaint handling is positively associated with overall workplace
+rating. When holding learning opportunities constant, a one-percentage-point
+increase in favourable responses about complaint handling is associated
+with an estimated r sprintf("%.3f", complaints_estimate)-percentage-point
+increase in overall workplace rating (95% CI:
+r sprintf("%.3f", complaints_lower) to
+r sprintf("%.3f", complaints_upper)). The entirety of the confidence interval above zero, supporting a positive adjusted association.
+Learning opportunities also have a positive estimated association, meaning that when you hold complaint handling constant, a one-percentage-point increase in favourable responses about learning opportunities is associated
+with an estimated r sprintf("%.3f", learning_estimate)-percentage-point
+increase in overall workplace rating (95% CI:
+r sprintf("%.3f", learning_lower) to
+r sprintf("%.3f", learning_upper)). Still, this interval includes
+zero and spans both negative and positive associations, so the data
+do not clearly establish an additional learning association after
+accounting for complaint handling. These estimates describe differences
+between departments rather than individual employees and should not
+be interpreted causally. The confidence intervals use conventional
+standard errors and should be interpreted cautiously given the
+diagnostic concerns about residual variability and normality.
+
+```
+````

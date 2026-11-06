@@ -124,7 +124,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#ai-use-disclosure" id="toc-ai-use-disclosure" class="nav-link active" data-scroll-target="#ai-use-disclosure">AI Use Disclosure</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
   <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link" data-scroll-target="#exploratory-data-analysis">Exploratory Data Analysis</a>
   <ul class="collapse">
@@ -152,6 +153,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a>
   <ul class="collapse">
   <li><a href="#discussion-and-limitations" id="toc-discussion-and-limitations" class="nav-link" data-scroll-target="#discussion-and-limitations">Discussion and Limitations</a></li>
+  </ul></li>
+  <li><a href="#ai-prompt-appendix" id="toc-ai-prompt-appendix" class="nav-link" data-scroll-target="#ai-prompt-appendix">AI Prompt Appendix</a>
+  <ul class="collapse">
+  <li><a href="#prompt" id="toc-prompt" class="nav-link" data-scroll-target="#prompt">Prompt</a></li>
+  <li><a href="#prompt-1" id="toc-prompt-1" class="nav-link" data-scroll-target="#prompt-1">Prompt</a></li>
+  <li><a href="#prompt-2" id="toc-prompt-2" class="nav-link" data-scroll-target="#prompt-2">Prompt</a></li>
+  <li><a href="#prompt-3" id="toc-prompt-3" class="nav-link" data-scroll-target="#prompt-3">Prompt</a></li>
+  <li><a href="#prompt-4" id="toc-prompt-4" class="nav-link" data-scroll-target="#prompt-4">Prompt</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -192,6 +201,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(performance)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<section id="ai-use-disclosure" class="level2">
+<h2 class="anchored" data-anchor-id="ai-use-disclosure">AI Use Disclosure</h2>
+<p>I used Perplexity AI during this assignment. Assistance included generating and amending R code for data preparation, visualization, regression estimation, model comparison, diagnostics, and formatted tables. I also used it to check my statistical interpretations and model-selection justification.</p>
+</section>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>This report investigates factors associated with employee ratings of their workplace. I will estimate and compare competing linear regression models, evaluate model diagnostics, and interpret the results of a preferred model.</p>
@@ -243,23 +256,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">2</span></span>
 <span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fadzxxeacc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#fadzxxeacc table {
+<div id="vfcyrflwhn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vfcyrflwhn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#fadzxxeacc thead, #fadzxxeacc tbody, #fadzxxeacc tfoot, #fadzxxeacc tr, #fadzxxeacc td, #fadzxxeacc th {
+#vfcyrflwhn thead, #vfcyrflwhn tbody, #vfcyrflwhn tfoot, #vfcyrflwhn tr, #vfcyrflwhn td, #vfcyrflwhn th {
   border-style: none;
 }
 
-#fadzxxeacc p {
+#vfcyrflwhn p {
   margin: 0;
   padding: 0;
 }
 
-#fadzxxeacc .gt_table {
+#vfcyrflwhn .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -285,12 +298,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#fadzxxeacc .gt_caption {
+#vfcyrflwhn .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#fadzxxeacc .gt_title {
+#vfcyrflwhn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -302,7 +315,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#fadzxxeacc .gt_subtitle {
+#vfcyrflwhn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -314,7 +327,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#fadzxxeacc .gt_heading {
+#vfcyrflwhn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -326,13 +339,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#fadzxxeacc .gt_bottom_border {
+#vfcyrflwhn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#fadzxxeacc .gt_col_headings {
+#vfcyrflwhn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -347,7 +360,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#fadzxxeacc .gt_col_heading {
+#vfcyrflwhn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -367,7 +380,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#fadzxxeacc .gt_column_spanner_outer {
+#vfcyrflwhn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -379,15 +392,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#fadzxxeacc .gt_column_spanner_outer:first-child {
+#vfcyrflwhn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fadzxxeacc .gt_column_spanner_outer:last-child {
+#vfcyrflwhn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fadzxxeacc .gt_column_spanner {
+#vfcyrflwhn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -399,11 +412,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#fadzxxeacc .gt_spanner_row {
+#vfcyrflwhn .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#fadzxxeacc .gt_group_heading {
+#vfcyrflwhn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -429,7 +442,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#fadzxxeacc .gt_empty_group_heading {
+#vfcyrflwhn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -444,15 +457,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#fadzxxeacc .gt_from_md > :first-child {
+#vfcyrflwhn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fadzxxeacc .gt_from_md > :last-child {
+#vfcyrflwhn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fadzxxeacc .gt_row {
+#vfcyrflwhn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -471,7 +484,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#fadzxxeacc .gt_stub {
+#vfcyrflwhn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -484,7 +497,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#fadzxxeacc .gt_stub_row_group {
+#vfcyrflwhn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -498,15 +511,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#fadzxxeacc .gt_row_group_first td {
+#vfcyrflwhn .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fadzxxeacc .gt_row_group_first th {
+#vfcyrflwhn .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#fadzxxeacc .gt_summary_row {
+#vfcyrflwhn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -516,16 +529,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#fadzxxeacc .gt_first_summary_row {
+#vfcyrflwhn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#fadzxxeacc .gt_first_summary_row.thick {
+#vfcyrflwhn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fadzxxeacc .gt_last_summary_row {
+#vfcyrflwhn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -535,7 +548,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#fadzxxeacc .gt_grand_summary_row {
+#vfcyrflwhn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -545,7 +558,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#fadzxxeacc .gt_first_grand_summary_row {
+#vfcyrflwhn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -555,7 +568,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#fadzxxeacc .gt_last_grand_summary_row_top {
+#vfcyrflwhn .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -565,11 +578,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#fadzxxeacc .gt_striped {
+#vfcyrflwhn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#fadzxxeacc .gt_table_body {
+#vfcyrflwhn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -578,7 +591,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#fadzxxeacc .gt_footnotes {
+#vfcyrflwhn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -592,7 +605,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#fadzxxeacc .gt_footnote {
+#vfcyrflwhn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -601,7 +614,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#fadzxxeacc .gt_sourcenotes {
+#vfcyrflwhn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -615,7 +628,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#fadzxxeacc .gt_sourcenote {
+#vfcyrflwhn .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -623,72 +636,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#fadzxxeacc .gt_left {
+#vfcyrflwhn .gt_left {
   text-align: left;
 }
 
-#fadzxxeacc .gt_center {
+#vfcyrflwhn .gt_center {
   text-align: center;
 }
 
-#fadzxxeacc .gt_right {
+#vfcyrflwhn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fadzxxeacc .gt_font_normal {
+#vfcyrflwhn .gt_font_normal {
   font-weight: normal;
 }
 
-#fadzxxeacc .gt_font_bold {
+#vfcyrflwhn .gt_font_bold {
   font-weight: bold;
 }
 
-#fadzxxeacc .gt_font_italic {
+#vfcyrflwhn .gt_font_italic {
   font-style: italic;
 }
 
-#fadzxxeacc .gt_super {
+#vfcyrflwhn .gt_super {
   font-size: 65%;
 }
 
-#fadzxxeacc .gt_footnote_marks {
+#vfcyrflwhn .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#fadzxxeacc .gt_asterisk {
+#vfcyrflwhn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fadzxxeacc .gt_indent_1 {
+#vfcyrflwhn .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fadzxxeacc .gt_indent_2 {
+#vfcyrflwhn .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fadzxxeacc .gt_indent_3 {
+#vfcyrflwhn .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fadzxxeacc .gt_indent_4 {
+#vfcyrflwhn .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fadzxxeacc .gt_indent_5 {
+#vfcyrflwhn .gt_indent_5 {
   text-indent: 25px;
 }
 
-#fadzxxeacc .katex-display {
+#vfcyrflwhn .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#fadzxxeacc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#vfcyrflwhn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -852,8 +865,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="summary-of-exploratory-findings" class="level3">
 <h3 class="anchored" data-anchor-id="summary-of-exploratory-findings">Summary of exploratory findings</h3>
-<p>Overall workplace ratings averaged 64.63 (SD = 12.17), ranging from 40 to 85 across the 30 departments. The histogram shows a main concentration of ratings around the mid-60s, with a tail extending toward lower ratings. All three predictors show positive associations with overall workplace rating. Complaint handling has the clearest approximately linear relationship, whereas learning opportunities and performance-based raises show more scatter around their fitted lines. There is no obvious strong curvature in these plots. Thus, linear relationships is a reasonable starting point. Some departments lie far away from the fitted lines, such as one with a learning score near 58 and an overall rating of 40. During regression diagnostics, we would need to pay closer attention to these observations. The positive associations are consistent with the expectation that more favorable views of complaint handling, learning opportunities, and performance-based raises accompany higher overall workplace ratings. Importantly, these department-level associations do not establish causation. ## Model Specification ### Predictions</p>
-<p>I expect that more favorable views of complaint handling will be associated with higher overall workplace ratings because responsive and fair handling of concerns may contribute to employees feeling heard and supported. In addition, also predict that learning opportunities will explain additional variation in workplace ratings beyond complaint handling, since professional development represents a distinct aspect of the workplace experience. Finally, I expect more favorable views of performance-based raises to explain further variation after accounting for complaint handling and learning opportunities, because recognition and perceived fairness in compensation could contribute to overall workplace evaluations. These expectations align with a sequence of models that begins with complaint handling, adds learning opportunities, and then adds performance-based raises. We will evaluate whether adding more predictors, such as pay, increases the fit of the model empirically.</p>
+<p>Overall workplace ratings averaged 64.63 (SD = 12.17), ranging from 40 to 85 across the 30 departments. The histogram shows a main concentration of ratings around the mid-60s, with a tail extending toward lower ratings. All three predictors show positive associations with overall workplace rating. Complaint handling has the clearest approximately linear relationship, whereas learning opportunities and performance-based raises show more scatter around their fitted lines. There is no obvious strong curvature in these plots. Thus, linear relationships is a reasonable starting point. Some departments lie far away from the fitted lines, such as one with a learning score near 58 and an overall rating of 40. During regression diagnostics, we would need to pay closer attention to these observations. The positive associations are consistent with the expectation that more favourable views of complaint handling, learning opportunities, and performance-based raises accompany higher overall workplace ratings. Importantly, these department-level associations do not establish causation. ## Model Specification ### Predictions</p>
+<p>I expect that more favourable views of complaint handling will be associated with higher overall workplace ratings because responsive and fair handling of concerns may contribute to employees feeling heard and supported. In addition, also predict that learning opportunities will explain additional variation in workplace ratings beyond complaint handling, since professional development represents a distinct aspect of the workplace experience. Finally, I expect more favourable views of performance-based raises to explain further variation after accounting for complaint handling and learning opportunities, because recognition and perceived fairness in compensation could contribute to overall workplace evaluations. These expectations align with a sequence of models that begins with complaint handling, adds learning opportunities, and then adds performance-based raises. We will evaluate whether adding more predictors, such as pay, increases the fit of the model empirically.</p>
 </section>
 <section id="competing-regression-models" class="level3">
 <h3 class="anchored" data-anchor-id="competing-regression-models">Competing regression models</h3>
@@ -1088,23 +1101,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb15-99"><a href="#cb15-99" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb15-100"><a href="#cb15-100" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="giiwwwocvj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#giiwwwocvj table {
+<div id="rlwiawnicp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rlwiawnicp table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#giiwwwocvj thead, #giiwwwocvj tbody, #giiwwwocvj tfoot, #giiwwwocvj tr, #giiwwwocvj td, #giiwwwocvj th {
+#rlwiawnicp thead, #rlwiawnicp tbody, #rlwiawnicp tfoot, #rlwiawnicp tr, #rlwiawnicp td, #rlwiawnicp th {
   border-style: none;
 }
 
-#giiwwwocvj p {
+#rlwiawnicp p {
   margin: 0;
   padding: 0;
 }
 
-#giiwwwocvj .gt_table {
+#rlwiawnicp .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1130,12 +1143,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#giiwwwocvj .gt_caption {
+#rlwiawnicp .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#giiwwwocvj .gt_title {
+#rlwiawnicp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1147,7 +1160,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#giiwwwocvj .gt_subtitle {
+#rlwiawnicp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1159,7 +1172,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#giiwwwocvj .gt_heading {
+#rlwiawnicp .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1171,13 +1184,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#giiwwwocvj .gt_bottom_border {
+#rlwiawnicp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#giiwwwocvj .gt_col_headings {
+#rlwiawnicp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1192,7 +1205,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#giiwwwocvj .gt_col_heading {
+#rlwiawnicp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1212,7 +1225,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#giiwwwocvj .gt_column_spanner_outer {
+#rlwiawnicp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1224,15 +1237,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#giiwwwocvj .gt_column_spanner_outer:first-child {
+#rlwiawnicp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#giiwwwocvj .gt_column_spanner_outer:last-child {
+#rlwiawnicp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#giiwwwocvj .gt_column_spanner {
+#rlwiawnicp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1244,11 +1257,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#giiwwwocvj .gt_spanner_row {
+#rlwiawnicp .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#giiwwwocvj .gt_group_heading {
+#rlwiawnicp .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1274,7 +1287,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#giiwwwocvj .gt_empty_group_heading {
+#rlwiawnicp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1289,15 +1302,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#giiwwwocvj .gt_from_md > :first-child {
+#rlwiawnicp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#giiwwwocvj .gt_from_md > :last-child {
+#rlwiawnicp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#giiwwwocvj .gt_row {
+#rlwiawnicp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1316,7 +1329,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#giiwwwocvj .gt_stub {
+#rlwiawnicp .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1329,7 +1342,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#giiwwwocvj .gt_stub_row_group {
+#rlwiawnicp .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1343,15 +1356,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#giiwwwocvj .gt_row_group_first td {
+#rlwiawnicp .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#giiwwwocvj .gt_row_group_first th {
+#rlwiawnicp .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#giiwwwocvj .gt_summary_row {
+#rlwiawnicp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1361,16 +1374,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#giiwwwocvj .gt_first_summary_row {
+#rlwiawnicp .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#giiwwwocvj .gt_first_summary_row.thick {
+#rlwiawnicp .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#giiwwwocvj .gt_last_summary_row {
+#rlwiawnicp .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1380,7 +1393,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#giiwwwocvj .gt_grand_summary_row {
+#rlwiawnicp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1390,7 +1403,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#giiwwwocvj .gt_first_grand_summary_row {
+#rlwiawnicp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1400,7 +1413,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#giiwwwocvj .gt_last_grand_summary_row_top {
+#rlwiawnicp .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1410,11 +1423,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#giiwwwocvj .gt_striped {
+#rlwiawnicp .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#giiwwwocvj .gt_table_body {
+#rlwiawnicp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1423,7 +1436,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#giiwwwocvj .gt_footnotes {
+#rlwiawnicp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1437,7 +1450,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#giiwwwocvj .gt_footnote {
+#rlwiawnicp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1446,7 +1459,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#giiwwwocvj .gt_sourcenotes {
+#rlwiawnicp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1460,7 +1473,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#giiwwwocvj .gt_sourcenote {
+#rlwiawnicp .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1468,72 +1481,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#giiwwwocvj .gt_left {
+#rlwiawnicp .gt_left {
   text-align: left;
 }
 
-#giiwwwocvj .gt_center {
+#rlwiawnicp .gt_center {
   text-align: center;
 }
 
-#giiwwwocvj .gt_right {
+#rlwiawnicp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#giiwwwocvj .gt_font_normal {
+#rlwiawnicp .gt_font_normal {
   font-weight: normal;
 }
 
-#giiwwwocvj .gt_font_bold {
+#rlwiawnicp .gt_font_bold {
   font-weight: bold;
 }
 
-#giiwwwocvj .gt_font_italic {
+#rlwiawnicp .gt_font_italic {
   font-style: italic;
 }
 
-#giiwwwocvj .gt_super {
+#rlwiawnicp .gt_super {
   font-size: 65%;
 }
 
-#giiwwwocvj .gt_footnote_marks {
+#rlwiawnicp .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#giiwwwocvj .gt_asterisk {
+#rlwiawnicp .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#giiwwwocvj .gt_indent_1 {
+#rlwiawnicp .gt_indent_1 {
   text-indent: 5px;
 }
 
-#giiwwwocvj .gt_indent_2 {
+#rlwiawnicp .gt_indent_2 {
   text-indent: 10px;
 }
 
-#giiwwwocvj .gt_indent_3 {
+#rlwiawnicp .gt_indent_3 {
   text-indent: 15px;
 }
 
-#giiwwwocvj .gt_indent_4 {
+#rlwiawnicp .gt_indent_4 {
   text-indent: 20px;
 }
 
-#giiwwwocvj .gt_indent_5 {
+#rlwiawnicp .gt_indent_5 {
   text-indent: 25px;
 }
 
-#giiwwwocvj .katex-display {
+#rlwiawnicp .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#giiwwwocvj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#rlwiawnicp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1771,23 +1784,23 @@ Low Correlation
 <span id="cb20-73"><a href="#cb20-73" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb20-74"><a href="#cb20-74" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="umkefuoaer" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#umkefuoaer table {
+<div id="ftpxhglufq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ftpxhglufq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#umkefuoaer thead, #umkefuoaer tbody, #umkefuoaer tfoot, #umkefuoaer tr, #umkefuoaer td, #umkefuoaer th {
+#ftpxhglufq thead, #ftpxhglufq tbody, #ftpxhglufq tfoot, #ftpxhglufq tr, #ftpxhglufq td, #ftpxhglufq th {
   border-style: none;
 }
 
-#umkefuoaer p {
+#ftpxhglufq p {
   margin: 0;
   padding: 0;
 }
 
-#umkefuoaer .gt_table {
+#ftpxhglufq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1813,12 +1826,12 @@ Low Correlation
   border-left-color: #D3D3D3;
 }
 
-#umkefuoaer .gt_caption {
+#ftpxhglufq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#umkefuoaer .gt_title {
+#ftpxhglufq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1830,7 +1843,7 @@ Low Correlation
   border-bottom-width: 0;
 }
 
-#umkefuoaer .gt_subtitle {
+#ftpxhglufq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1842,7 +1855,7 @@ Low Correlation
   border-top-width: 0;
 }
 
-#umkefuoaer .gt_heading {
+#ftpxhglufq .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1854,13 +1867,13 @@ Low Correlation
   border-right-color: #D3D3D3;
 }
 
-#umkefuoaer .gt_bottom_border {
+#ftpxhglufq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#umkefuoaer .gt_col_headings {
+#ftpxhglufq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1875,7 +1888,7 @@ Low Correlation
   border-right-color: #D3D3D3;
 }
 
-#umkefuoaer .gt_col_heading {
+#ftpxhglufq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1895,7 +1908,7 @@ Low Correlation
   overflow-x: hidden;
 }
 
-#umkefuoaer .gt_column_spanner_outer {
+#ftpxhglufq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1907,15 +1920,15 @@ Low Correlation
   padding-right: 4px;
 }
 
-#umkefuoaer .gt_column_spanner_outer:first-child {
+#ftpxhglufq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#umkefuoaer .gt_column_spanner_outer:last-child {
+#ftpxhglufq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#umkefuoaer .gt_column_spanner {
+#ftpxhglufq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1927,11 +1940,11 @@ Low Correlation
   width: 100%;
 }
 
-#umkefuoaer .gt_spanner_row {
+#ftpxhglufq .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#umkefuoaer .gt_group_heading {
+#ftpxhglufq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1957,7 +1970,7 @@ Low Correlation
   text-align: left;
 }
 
-#umkefuoaer .gt_empty_group_heading {
+#ftpxhglufq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1972,15 +1985,15 @@ Low Correlation
   vertical-align: middle;
 }
 
-#umkefuoaer .gt_from_md > :first-child {
+#ftpxhglufq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#umkefuoaer .gt_from_md > :last-child {
+#ftpxhglufq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#umkefuoaer .gt_row {
+#ftpxhglufq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1999,7 +2012,7 @@ Low Correlation
   overflow-x: hidden;
 }
 
-#umkefuoaer .gt_stub {
+#ftpxhglufq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2012,7 +2025,7 @@ Low Correlation
   padding-right: 5px;
 }
 
-#umkefuoaer .gt_stub_row_group {
+#ftpxhglufq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2026,15 +2039,15 @@ Low Correlation
   vertical-align: top;
 }
 
-#umkefuoaer .gt_row_group_first td {
+#ftpxhglufq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#umkefuoaer .gt_row_group_first th {
+#ftpxhglufq .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#umkefuoaer .gt_summary_row {
+#ftpxhglufq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2044,16 +2057,16 @@ Low Correlation
   padding-right: 5px;
 }
 
-#umkefuoaer .gt_first_summary_row {
+#ftpxhglufq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#umkefuoaer .gt_first_summary_row.thick {
+#ftpxhglufq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#umkefuoaer .gt_last_summary_row {
+#ftpxhglufq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2063,7 +2076,7 @@ Low Correlation
   border-bottom-color: #D3D3D3;
 }
 
-#umkefuoaer .gt_grand_summary_row {
+#ftpxhglufq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2073,7 +2086,7 @@ Low Correlation
   padding-right: 5px;
 }
 
-#umkefuoaer .gt_first_grand_summary_row {
+#ftpxhglufq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2083,7 +2096,7 @@ Low Correlation
   border-top-color: #D3D3D3;
 }
 
-#umkefuoaer .gt_last_grand_summary_row_top {
+#ftpxhglufq .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2093,11 +2106,11 @@ Low Correlation
   border-bottom-color: #D3D3D3;
 }
 
-#umkefuoaer .gt_striped {
+#ftpxhglufq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#umkefuoaer .gt_table_body {
+#ftpxhglufq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2106,7 +2119,7 @@ Low Correlation
   border-bottom-color: #D3D3D3;
 }
 
-#umkefuoaer .gt_footnotes {
+#ftpxhglufq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2120,7 +2133,7 @@ Low Correlation
   border-right-color: #D3D3D3;
 }
 
-#umkefuoaer .gt_footnote {
+#ftpxhglufq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2129,7 +2142,7 @@ Low Correlation
   padding-right: 5px;
 }
 
-#umkefuoaer .gt_sourcenotes {
+#ftpxhglufq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2143,7 +2156,7 @@ Low Correlation
   border-right-color: #D3D3D3;
 }
 
-#umkefuoaer .gt_sourcenote {
+#ftpxhglufq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2151,72 +2164,72 @@ Low Correlation
   padding-right: 5px;
 }
 
-#umkefuoaer .gt_left {
+#ftpxhglufq .gt_left {
   text-align: left;
 }
 
-#umkefuoaer .gt_center {
+#ftpxhglufq .gt_center {
   text-align: center;
 }
 
-#umkefuoaer .gt_right {
+#ftpxhglufq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#umkefuoaer .gt_font_normal {
+#ftpxhglufq .gt_font_normal {
   font-weight: normal;
 }
 
-#umkefuoaer .gt_font_bold {
+#ftpxhglufq .gt_font_bold {
   font-weight: bold;
 }
 
-#umkefuoaer .gt_font_italic {
+#ftpxhglufq .gt_font_italic {
   font-style: italic;
 }
 
-#umkefuoaer .gt_super {
+#ftpxhglufq .gt_super {
   font-size: 65%;
 }
 
-#umkefuoaer .gt_footnote_marks {
+#ftpxhglufq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#umkefuoaer .gt_asterisk {
+#ftpxhglufq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#umkefuoaer .gt_indent_1 {
+#ftpxhglufq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#umkefuoaer .gt_indent_2 {
+#ftpxhglufq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#umkefuoaer .gt_indent_3 {
+#ftpxhglufq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#umkefuoaer .gt_indent_4 {
+#ftpxhglufq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#umkefuoaer .gt_indent_5 {
+#ftpxhglufq .gt_indent_5 {
   text-indent: 25px;
 }
 
-#umkefuoaer .katex-display {
+#ftpxhglufq .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#umkefuoaer div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ftpxhglufq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2286,6 +2299,144 @@ Low Correlation
 <h3 class="anchored" data-anchor-id="discussion-and-limitations">Discussion and Limitations</h3>
 <p>Complaint handling emerged as the strongest and most consistent predictor of overall workplace ratings in this analysis. It accounted for most of the explained variation and stayed positively associated with ratings after accounting for learning opportunities and performance-based raises. Learning opportunities showed a positive estimated association and modestly improved model performance, but the confidence interval included zero and the nested-model test did not establish a statistically significant improvement beyond complaint handling. Performance-based raises contributed almost no additional explained variation after accounting for complaints and learning. These findings suggest that complaint handling provides the clearest information about differences in workplace ratings across these departments, while the evidence for an additional contribution from learning is uncertain and that for raises is limited.</p>
 <p>Several limitations qualify these conclusions. The analysis includes only 30 departments, limiting the precision of estimates and the ability to detect smaller associations. The observations are department-level summaries, so the findings cannot be assumed to describe relationships among individual employees. These observational associations also do not establish that changing complaint handling, learning opportunities, or raises would cause changes in workplace ratings. Other unmeasured workplace characteristics could help explain the observed relationships. In addition, diagnostic concerns about residual normality and potentially unequal residual variance call for caution when interpreting conventional confidence intervals and p-values. Model performance was assessed using the same departments used for estimation, rather than an independent validation sample. Finally, the limited additional contribution of raises does not imply that compensation is unimportant. Instead, it indicates that this particular measure added little explanatory information beyond complaints and learning in this dataset.</p>
+</section>
+</section>
+<section id="ai-prompt-appendix" class="level2">
+<h2 class="anchored" data-anchor-id="ai-prompt-appendix">AI Prompt Appendix</h2>
+<p>The following prompts were submitted to Perplexity AI during this Lab assignment.</p>
+<section id="prompt" class="level3">
+<h3 class="anchored" data-anchor-id="prompt">Prompt</h3>
+<p>where do i check if analysis data has 30 rows and 4 required columns?</p>
+</section>
+<section id="prompt-1" class="level3">
+<h3 class="anchored" data-anchor-id="prompt-1">Prompt</h3>
+<p>after adding the histogram to the same chunk, the code didnt work so i clicked the left arrow stating go back to previous source location and now this happened.</p>
+</section>
+<section id="prompt-2" class="level3">
+<h3 class="anchored" data-anchor-id="prompt-2">Prompt</h3>
+<p>I dont see the histogram after rendering.</p>
+</section>
+<section id="prompt-3" class="level3">
+<h3 class="anchored" data-anchor-id="prompt-3">Prompt</h3>
+<p>is this histogram correct? and what about there being no standard deviations on the table i showed</p>
+</section>
+<section id="prompt-4" class="level3">
+<h3 class="anchored" data-anchor-id="prompt-4">Prompt</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>Is this code right for estimating the four models? ### Competing regression models?</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>```{r}</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>#| label: fit-models</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a># M0: Intercept-only baseline</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>model_0 &lt;- lm(</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  rating ~ 1,</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  data = analysis_data</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a># M1: Complaint handling</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>model_1 &lt;- lm(</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  rating ~ complaints,</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>  data = analysis_data</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a># M2: Complaint handling and learning opportunities</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>model_2  lm(</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>  rating ~ complaints + learning,</span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>  data = analysis_data</span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a># M3: Complaint handling, learning opportunities, and raises</span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>model_3 &lt;- lm(</span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>  rating ~ complaints + learning + raises,</span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>  data = analysis_data</span>
+<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a>```</span>
+<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a>~~~~</span>
+<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a>### Prompt</span>
+<span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a>what should the code include for comparing the four model performances using anova?</span>
+<span id="cb21-34"><a href="#cb21-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-35"><a href="#cb21-35" aria-hidden="true" tabindex="-1"></a>### Prompt</span>
+<span id="cb21-36"><a href="#cb21-36" aria-hidden="true" tabindex="-1"></a>anova_results</span>
+<span id="cb21-37"><a href="#cb21-37" aria-hidden="true" tabindex="-1"></a>Analysis of Variance Table</span>
+<span id="cb21-38"><a href="#cb21-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-39"><a href="#cb21-39" aria-hidden="true" tabindex="-1"></a>Model 1: rating ~ 1</span>
+<span id="cb21-40"><a href="#cb21-40" aria-hidden="true" tabindex="-1"></a>Model 2: rating ~ complaints</span>
+<span id="cb21-41"><a href="#cb21-41" aria-hidden="true" tabindex="-1"></a>Model 3: rating ~ complaints + learning</span>
+<span id="cb21-42"><a href="#cb21-42" aria-hidden="true" tabindex="-1"></a>Model 4: rating ~ complaints + learning + raises</span>
+<span id="cb21-43"><a href="#cb21-43" aria-hidden="true" tabindex="-1"></a>Res.Df    RSS Df Sum of Sq       F    Pr(&gt;F)</span>
+<span id="cb21-44"><a href="#cb21-44" aria-hidden="true" tabindex="-1"></a>1     29 4297.0</span>
+<span id="cb21-45"><a href="#cb21-45" aria-hidden="true" tabindex="-1"></a>2     28 1369.4  1   2927.58 60.7256 2.884e-08 ***</span>
+<span id="cb21-46"><a href="#cb21-46" aria-hidden="true" tabindex="-1"></a>3     27 1254.6  1    114.73  2.3799    0.1350</span>
+<span id="cb21-47"><a href="#cb21-47" aria-hidden="true" tabindex="-1"></a>4     26 1253.5  1      1.19  0.0246    0.8765</span>
+<span id="cb21-48"><a href="#cb21-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-49"><a href="#cb21-49" aria-hidden="true" tabindex="-1"></a>Signif. codes:  0 ‘’ 0.001 ‘’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span>
+<span id="cb21-50"><a href="#cb21-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-51"><a href="#cb21-51" aria-hidden="true" tabindex="-1"></a>nested_tests</span>
+<span id="cb21-52"><a href="#cb21-52" aria-hidden="true" tabindex="-1"></a>Model               Comparison residual_df change_df f_statistic      p_value</span>
+<span id="cb21-53"><a href="#cb21-53" aria-hidden="true" tabindex="-1"></a>1    M0                 Baseline          29        NA          NA           NA</span>
+<span id="cb21-54"><a href="#cb21-54" aria-hidden="true" tabindex="-1"></a>2    M1 M1 vs M0: Add complaints          28         1 60.72560389 2.883919e-08</span>
+<span id="cb21-55"><a href="#cb21-55" aria-hidden="true" tabindex="-1"></a>3    M2   M2 vs M1: Add learning          27         1  2.37986580 1.349930e-01</span>
+<span id="cb21-56"><a href="#cb21-56" aria-hidden="true" tabindex="-1"></a>4    M3     M3 vs M2: Add raises          26         1  0.02463664 8.764884e-01</span>
+<span id="cb21-57"><a href="#cb21-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-58"><a href="#cb21-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-59"><a href="#cb21-59" aria-hidden="true" tabindex="-1"></a>### Prompt</span>
+<span id="cb21-60"><a href="#cb21-60" aria-hidden="true" tabindex="-1"></a>model_performance</span>
+<span id="cb21-61"><a href="#cb21-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-62"><a href="#cb21-62" aria-hidden="true" tabindex="-1"></a>A tibble: 4 × 4</span>
+<span id="cb21-63"><a href="#cb21-63" aria-hidden="true" tabindex="-1"></a>  Model r_squared adjusted_r_squared  RMSE</span>
+<span id="cb21-64"><a href="#cb21-64" aria-hidden="true" tabindex="-1"></a>&lt;chr&gt;     &lt;dbl&gt;              &lt;dbl&gt; &lt;dbl&gt;</span>
+<span id="cb21-65"><a href="#cb21-65" aria-hidden="true" tabindex="-1"></a>1 M0        0                  0     12.0</span>
+<span id="cb21-66"><a href="#cb21-66" aria-hidden="true" tabindex="-1"></a>2 M1        0.681              0.670  6.76</span>
+<span id="cb21-67"><a href="#cb21-67" aria-hidden="true" tabindex="-1"></a>3 M2        0.708              0.686  6.47</span>
+<span id="cb21-68"><a href="#cb21-68" aria-hidden="true" tabindex="-1"></a>4 M3        0.708              0.675  6.46</span>
+<span id="cb21-69"><a href="#cb21-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-70"><a href="#cb21-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-71"><a href="#cb21-71" aria-hidden="true" tabindex="-1"></a>### Prompt</span>
+<span id="cb21-72"><a href="#cb21-72" aria-hidden="true" tabindex="-1"></a>To combine the model-performance statistics with the nested-model test results, what should the code look like?</span>
+<span id="cb21-73"><a href="#cb21-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-74"><a href="#cb21-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-75"><a href="#cb21-75" aria-hidden="true" tabindex="-1"></a>### Prompt</span>
+<span id="cb21-76"><a href="#cb21-76" aria-hidden="true" tabindex="-1"></a>image.png</span>
+<span id="cb21-77"><a href="#cb21-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-78"><a href="#cb21-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-79"><a href="#cb21-79" aria-hidden="true" tabindex="-1"></a>### Prompt</span>
+<span id="cb21-80"><a href="#cb21-80" aria-hidden="true" tabindex="-1"></a>Does my paragraph  explin</span>
+<span id="cb21-81"><a href="#cb21-81" aria-hidden="true" tabindex="-1"></a>1. Which assumptions appear reasonably satisfied.</span>
+<span id="cb21-82"><a href="#cb21-82" aria-hidden="true" tabindex="-1"></a>2. Whether any potential problems are evident.</span>
+<span id="cb21-83"><a href="#cb21-83" aria-hidden="true" tabindex="-1"></a>3. Whether those problems affect your confidence in the model.</span>
+<span id="cb21-84"><a href="#cb21-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-85"><a href="#cb21-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-86"><a href="#cb21-86" aria-hidden="true" tabindex="-1"></a>### Prompt</span>
+<span id="cb21-87"><a href="#cb21-87" aria-hidden="true" tabindex="-1"></a>I want to retain M2, what would you say and why?</span>
+<span id="cb21-88"><a href="#cb21-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-89"><a href="#cb21-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-90"><a href="#cb21-90" aria-hidden="true" tabindex="-1"></a>### Prompt</span>
+<span id="cb21-91"><a href="#cb21-91" aria-hidden="true" tabindex="-1"></a>How do I fit these nested model f tests: Nested-model F-tests. • ΔR². • Adjusted R². • RMSE. • Model complexity. • Diagnostic findings. • Substantive interpretability</span>
+<span id="cb21-92"><a href="#cb21-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-93"><a href="#cb21-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-94"><a href="#cb21-94" aria-hidden="true" tabindex="-1"></a>### Prompt</span>
+<span id="cb21-95"><a href="#cb21-95" aria-hidden="true" tabindex="-1"></a> i wrote this, and tell me if it is fine as it is: In M2, complaint handling is positively associated with overall workplace</span>
+<span id="cb21-96"><a href="#cb21-96" aria-hidden="true" tabindex="-1"></a>rating. When holding learning opportunities constant, a one-percentage-point</span>
+<span id="cb21-97"><a href="#cb21-97" aria-hidden="true" tabindex="-1"></a>increase in favourable responses about complaint handling is associated</span>
+<span id="cb21-98"><a href="#cb21-98" aria-hidden="true" tabindex="-1"></a>with an estimated r sprintf("%.3f", complaints_estimate)-percentage-point</span>
+<span id="cb21-99"><a href="#cb21-99" aria-hidden="true" tabindex="-1"></a>increase in overall workplace rating (95% CI:</span>
+<span id="cb21-100"><a href="#cb21-100" aria-hidden="true" tabindex="-1"></a>r sprintf("%.3f", complaints_lower) to</span>
+<span id="cb21-101"><a href="#cb21-101" aria-hidden="true" tabindex="-1"></a>r sprintf("%.3f", complaints_upper)). The entirety of the confidence interval above zero, supporting a positive adjusted association.</span>
+<span id="cb21-102"><a href="#cb21-102" aria-hidden="true" tabindex="-1"></a>Learning opportunities also have a positive estimated association, meaning that when you hold complaint handling constant, a one-percentage-point increase in favourable responses about learning opportunities is associated</span>
+<span id="cb21-103"><a href="#cb21-103" aria-hidden="true" tabindex="-1"></a>with an estimated r sprintf("%.3f", learning_estimate)-percentage-point</span>
+<span id="cb21-104"><a href="#cb21-104" aria-hidden="true" tabindex="-1"></a>increase in overall workplace rating (95% CI:</span>
+<span id="cb21-105"><a href="#cb21-105" aria-hidden="true" tabindex="-1"></a>r sprintf("%.3f", learning_lower) to</span>
+<span id="cb21-106"><a href="#cb21-106" aria-hidden="true" tabindex="-1"></a>r sprintf("%.3f", learning_upper)). Still, this interval includes</span>
+<span id="cb21-107"><a href="#cb21-107" aria-hidden="true" tabindex="-1"></a>zero and spans both negative and positive associations, so the data</span>
+<span id="cb21-108"><a href="#cb21-108" aria-hidden="true" tabindex="-1"></a>do not clearly establish an additional learning association after</span>
+<span id="cb21-109"><a href="#cb21-109" aria-hidden="true" tabindex="-1"></a>accounting for complaint handling. These estimates describe differences</span>
+<span id="cb21-110"><a href="#cb21-110" aria-hidden="true" tabindex="-1"></a>between departments rather than individual employees and should not</span>
+<span id="cb21-111"><a href="#cb21-111" aria-hidden="true" tabindex="-1"></a>be interpreted causally. The confidence intervals use conventional</span>
+<span id="cb21-112"><a href="#cb21-112" aria-hidden="true" tabindex="-1"></a>standard errors and should be interpreted cautiously given the</span>
+<span id="cb21-113"><a href="#cb21-113" aria-hidden="true" tabindex="-1"></a>diagnostic concerns about residual variability and normality.</span>
+<span id="cb21-114"><a href="#cb21-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-115"><a href="#cb21-115" aria-hidden="true" tabindex="-1"></a>```</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>
